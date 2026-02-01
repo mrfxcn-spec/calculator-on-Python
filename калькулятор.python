@@ -1,0 +1,40 @@
+def calculator():
+    print("=" * 30)
+    print("      ПРОСТОЙ КАЛЬКУЛЯТОР      ")
+    print("=" * 30)
+    print("Выберите операцию:")
+    print("1. Сложение (+)")
+    print("2. Вычитание (-)")
+    print("3. Умножение (*)")
+    print("4. Деление (/)")
+    print("=" * 30)
+
+    choice = input("Введите номер операции (1/2/3/4): ").strip()
+
+    if choice not in ('1', '2', '3', '4'):
+        print("\nОшибка: неверный выбор операции.\n")
+        return
+
+    try:
+        num1 = float(input("\nВведите первое число: "))
+        num2 = float(input("Введите второе число: "))
+    except ValueError:
+        print("\nОшибка: введите числовое значение.\n")
+        return
+
+    print("\n" + "=" * 30)
+    if choice == '1':
+        print(f"Результат: {num1} + {num2} = {num1 + num2}")
+    elif choice == '2':
+        print(f"Результат: {num1} - {num2} = {num1 - num2}")
+    elif choice == '3':
+        print(f"Результат: {num1} * {num2} = {num1 * num2}")
+    elif choice == '4':
+        if num2 == 0:
+            print("Ошибка: деление на ноль!")
+        else:
+            print(f"Результат: {num1} / {num2} = {num1 / num2}")
+    print("=" * 30 + "\n")
+
+calculator()
+print("by mrfxcn-spec")
